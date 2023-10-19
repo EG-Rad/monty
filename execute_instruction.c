@@ -5,7 +5,7 @@ void execute_instruction(char *line, unsigned int line_number)
 {
     char *opcode;
     opcode = strtok(line, " \t\n");
-    
+
     if (opcode == NULL || *opcode == '#')
         return;  // Ignore empty lines and comments
 
@@ -17,6 +17,10 @@ void execute_instruction(char *line, unsigned int line_number)
     {
         pall(&stack, line_number);
     }
+    else if (strcmp(opcode, "pint") == 0) // Add case for pint
+    {
+        pint(&stack, line_number);
+    }
     else
     {
         fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
@@ -24,3 +28,4 @@ void execute_instruction(char *line, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 }
+
