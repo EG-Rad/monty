@@ -7,7 +7,7 @@ void execute_instruction(char *line, unsigned int line_number)
     opcode = strtok(line, " \t\n");
 
     if (opcode == NULL || *opcode == '#')
-        return;  // Ignore empty lines and comments
+        return;  
 
     if (strcmp(opcode, "push") == 0)
     {
@@ -17,7 +17,7 @@ void execute_instruction(char *line, unsigned int line_number)
     {
         pall(&stack, line_number);
     }
-    else if (strcmp(opcode, "pint") == 0) // Add case for pint
+    else if (strcmp(opcode, "pint") == 0) 
     {
         pint(&stack, line_number);
     }
