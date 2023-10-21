@@ -1,5 +1,4 @@
 #include "monty.h"
-#include "100-atoi.c"
 
 int main(int argc, char *argv[])
 {
